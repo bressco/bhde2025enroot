@@ -12,6 +12,7 @@ vars:
   dev_file: "data/dev.spacy"
   test_file: "data/test.spacy"
   trained_model: "training/model-best"
+  evaluation_output: "training/evaluation.json"
 
 # These are the directories that the project needs. The project CLI will make
 # sure that they always exist.
@@ -82,7 +83,7 @@ commands:
   - name: "evaluate_gpu"
     help: "Apply the best model to new, unseen text, and measure accuracy at different thresholds using GPU"
     script:
-      - "python -m spacy evaluate ${vars.trained_model} ${vars.test_file} --gpu-id 0 --output evaluation.json"
+      - "python -m spacy evaluate ${vars.trained_model} ${vars.test_file} --gpu-id 0 --output ${evaluation_output}"
     deps:
       - ${vars.trained_model}
       - ${vars.test_file}
