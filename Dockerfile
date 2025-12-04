@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:2.9.1-cuda12.8-cudnn9-runtime
+FROM nvcr.io/nvidia/pytorch:25.11-py3
 
 ADD /scripts /workspace/scripts
 ADD project.yml /workspace
