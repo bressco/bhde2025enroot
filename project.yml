@@ -83,7 +83,7 @@ commands:
   - name: "evaluate_gpu"
     help: "Apply the best model to new, unseen text, and measure accuracy at different thresholds using GPU"
     script:
-      - "python -m spacy evaluate ${vars.trained_model} ${vars.test_file} --gpu-id 0 --output ${evaluation_output}"
+      - "python -m spacy evaluate ${vars.trained_model} ${vars.test_file} --gpu-id 0 --output ${vars.evaluation_output}"
     deps:
       - ${vars.trained_model}
       - ${vars.test_file}
